@@ -1,0 +1,14 @@
+Q.4)What is MF cod rule of RDBMS system?
+Ans. Codd's twelve rules[1] are a set of thirteen rules (numbered zero to twelve) proposed by Edgar F. Codd, a pioneer of the relational model for databases, designed to define what is required from a database management system in order for it to be considered relational, i.e., a relational database management system (RDBMS).[2][3] They are sometimes referred to as "Codd's Twelve Commandments".
+
+Q.5)What do you understand by data redundancy?
+Ans. In DBMS, redundancy refers to storing the same data in multiple locations within a database. Redundancy can occur in a database when the same data is stored in different tables or even in the same table multiple times.
+ -->It is occur due to
+   -There are various ways in which data redundancy can occur:
+     --->Duplicate data copies in multiple database locations can lead to data redundancy.
+     --->Flaws in database design can also cause data redundancy.
+     --->If problems appear during operations or data modifications, data redundancy may occur.
+
+Q.6)What is DDL Interpreter?
+Ans. Data Definition Language (DDL) is a standard for commands that define the different structures in a database. 
+    DDL statements create, modify, and remove database objects such as tables, indexes, and users. Common DDL statements are CREATE, ALTER, and DROP.

@@ -1,0 +1,46 @@
+Q.21)TABLE :- ITEM_MAST
+   
+        CREATE TABLE item_mast
+ (
+     pro_id int PRIMARY KEY AUTO_INCREMENT,
+     pro_name varchar(30),
+     pro_price float,
+     pro_com int 
+   )
+
+--->insertion of value in table:-
+  INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(101,"mother board",3200.00,15);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(102,"key board",450.00,16);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(103,"zip drive",250.00,14);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(104,"speaker",550.00,16);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(105,"moniter",5000.00,11);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(106,"DVD drive",900.00,12);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(107,"CD drive",800.00,12);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(108,"printer",2600.00,13);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(109,"refill cartridge",350.00,13);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(110,"mouse",250.00,12);
+ 
+----SQL query:-  SELECT AVG(pro_price) FROM item_mast WHERE pro_com=16
+-------------------------------------------------------------------------------------
+Q.22)
+   SQL query:- SELECT pro_name AS "item name", pro_price AS "price in Rs" FROM item_mast
+
+--------------------------------------------------------------------------------------
+Q.23)
+   SQL query:-   SELECT pro_name,pro_price FROM item_mast WHERE pro_price >= 250
+ ORDER BY pro_price DESC ,pro_name ASC
+
+---------------------------------------------------------------------------------------------
+Q.24)
+   SQL query:-   SELECT AVG(pro_price),pro_com FROM item_mast GROUP BY pro_com
+---------------------------------------------------------------------------------------------

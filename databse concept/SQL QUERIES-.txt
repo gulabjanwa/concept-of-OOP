@@ -1,0 +1,36 @@
+SQL QUERIES:-
+
+1) Create table name : student and exam
+-->
+   CREATE DATABASE sql_db
+
+--->Creation of table
+   CREATE TABLE student_sq
+(
+    st_rollnumber int PRIMARY KEY AUTO_INCREMENT,
+    std_name varchar(30),
+    std_branch varchar(30)
+  )
+
+--->insertion of value in table->    
+INSERT INTO student_sq(st_rollnumber,std_name,std_branch) VALUES(1,"JAY","Computer science"); 
+INSERT INTO student_sq(st_rollnumber,std_name,std_branch) VALUES(2,"SUHANI","Electronic and com"); 
+INSERT INTO student_sq(st_rollnumber,std_name,std_branch) VALUES(3,"KRITI","Electronic and com"); 
+
+----->Creation of second table 
+   CREATE TABLE exam_sq
+ (
+     s_code varchar(30),
+     marks int,
+     p_code varchar(30),
+     
+     st_rollnumber_fk int,
+     FOREIGN KEY student_sq(st_rollnumber_fk) REFERENCES student_sq(st_rollnumber)
+   ) 
+---->Insertion of value in table 
+INSERT INTO exam_sq("s_code",'marks","p_code","st_rollnumber_fk") VALUES("CS11",50,"CS",1);
+INSERT INTO exam_sq("s_code",'marks","p_code","st_rollnumber_fk") VALUES("CS12",60,"CS",1);
+INSERT INTO exam_sq("s_code",'marks","p_code","st_rollnumber_fk") VALUES("EC101",66,"EC",2);
+INSERT INTO exam_sq("s_code",'marks","p_code","st_rollnumber_fk") VALUES("EC102",70,"EC",2);
+INSERT INTO exam_sq("s_code",'marks","p_code","st_rollnumber_fk") VALUES("EC101",45,"EC",3);
+INSERT INTO exam_sq("s_code",'marks","p_code","st_rollnumber_fk") VALUES("EC102",50,"EC",3);

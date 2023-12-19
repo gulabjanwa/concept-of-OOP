@@ -1,0 +1,86 @@
+SQL queries:-
+2)create table : EMPLOYEE AND INCENTIVE
+
+a)Table ---> Employee
+
+   CREATE TABLE employee_sq
+(
+    employee_id int PRIMARY KEY AUTO_INCREMENT,
+    first_name varchar(30),
+    last_name varchar(30),
+    salary int,
+    joining_date  varchar(30),
+    deparment varchar(30)
+    )
+-->insertion value in table
+
+ INSERT INTO employee_sq(employee_id,first_name,last_name,salary,joining_date,deparment) 
+ VALUES(1,"John","Abrahim","1000000","01-JAN-13 12.00.00 AM","Insurance");
+ INSERT INTO employee_sq(employee_id,first_name,last_name,salary,joining_date,deparment)
+ VALUES(2,"Michael","Clarke","800000","01-JAN-13 12.00.00 AM","Insurance");
+ INSERT INTO employee_sq(employee_id,first_name,last_name,salary,joining_date,deparment)
+ VALUES(3,"Roy","Thomas",700000,"01-FEB-13 12.00.00 AM","Banking");
+ INSERT INTO employee_sq(employee_id,first_name,last_name,salary,joining_date,deparment)
+ VALUES(4,"Tom","Jose",600000,"01-FEB-13 12.00.00 AM","Insurance");
+ INSERT INTO employee_sq(employee_id,first_name,last_name,salary,joining_date,deparment)
+ VALUES(5, 'Jerry', 'Pinto', '650000', '01-FEB-13 12.00.00 AM', 'Insurance');
+ INSERT INTO employee_sq(employee_id,first_name,last_name,salary,joining_date,deparment)
+ VALUES(6, 'Philip', 'Mathew', '750000', '01-JAN-13 12.00.00 AM', 'Services');
+ INSERT INTO employee_sq(employee_id,first_name,last_name,salary,joining_date,deparment)
+ VALUES(7, 'Aman', 'parik', '650000', '01-JAN-13 12.00.00 AM', 'Services');
+INSERT INTO employee_sq(employee_id,first_name,last_name,salary,joining_date,deparment)
+ VALUES(8, 'Ajay', 'Sompura', '600000', '01-FEB-13 12.00.00 AM', 'Insurance');
+
+b) create TABLE incentive 
+   
+   CREATE TABLE incentive_sq
+(
+    incentive_date varchar(30),
+    incentive_amount int,
+    
+    employee_id_fk int,
+    FOREIGN KEY employee_sq(employee_id_fk) REFERENCES employee_sq(employee_id)
+    )
+----->Insertion of value in table
+ INSERT INTO incentive_sq(employee_id_fk,incentive_date,incentive_amount) VALUES(1,"01-FEB-13",5000);
+ INSERT INTO incentive_sq(employee_id_fk,incentive_date,incentive_amount) VALUES(2,"01-FEB-13",3000);
+ INSERT INTO incentive_sq(employee_id_fk,incentive_date,incentive_amount) VALUES(3,"01-FEB-13",4000);
+ INSERT INTO incentive_sq(employee_id_fk,incentive_date,incentive_amount) VALUES(1,"01-JAN-13",4500);
+ INSERT INTO incentive_sq(employee_id_fk,incentive_date,incentive_amount) VALUES(2,"01-JAN-13",3500);
+
+01)  SELECT * FROM employee_sq WHERE first_name="tom"
+02)  SELECT first_name,joining_date,salary FROM employee_sq
+03)   SELECT * FROM employee_sq ORDER BY first_name ASC
+      SELECT * FROM employee_sq ORDER BY salary DESC
+04)  SELECT * FROM employee_sq WHERE first_name LIKE 'j%'
+05)  SELECT * FROM employee_sq deparment ORDER BY salary DESC
+06)  SELECT * FROM employee_sq ORDER BY salary ASC
+
+07)
+   CREATE TABLE viewtable
+(
+    id int,
+    name varchar(30),
+    salary int,
+    department varchar(30),
+    action_performed varchar(30)
+   ) 
+
+
+---->using trigger
+     DELIMITER $$
+ CREATE TRIGGER insert_triger AFTER INSERT ON employee_sq FOR EACH ROW
+ BEGIN
+ 
+INSERT INTO viewtable(id,name,salary,department,action_performed) 
+VALUES(new.employee_id,new.first_name,new.salary,new.deparment,"record inserted");
+ 
+ 
+  
+ END
+
+-->INSERT INTO `employee_sq` (`employee_id`, `first_name`, `last_name`, `salary`, `joining_date`, `deparment`) 
+VALUES ('9', 'vimal', 'kumar', '40000', NULL, NULL);
+
+
+

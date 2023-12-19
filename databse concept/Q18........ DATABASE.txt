@@ -1,0 +1,89 @@
+Q.18)TABLE :- SALESPEOPLE
+
+   CREATE TABLE salespeople
+ (
+     salesmanid int PRIMARY KEY AUTO_INCREMENT,
+     name varchar(30),
+     city varchar(30),
+     commission float
+     )
+-->INSERTION VALUE IN TABLE
+
+  INSERT INTO salespeople(salesmanid,name,city,commission)
+VALUES(5001,"james hoog","new york",0.15);
+INSERT INTO salespeople(salesmanid,name,city,commission)
+VALUES(5002,"nail knite","paris",0.13);
+INSERT INTO salespeople(salesmanid,name,city,commission)
+VALUES(5005,"peet alex","london",.11);
+INSERT INTO salespeople(salesmanid,name,city,commission)
+VALUES(5006,"mc liyon","paris",.14);
+INSERT INTO salespeople(salesmanid,name,city,commission)
+VALUES(5007,"paul adam","rome",.13);
+INSERT INTO salespeople(salesmanid,name,city,commission)
+VALUES(5003,"lausan hen","san jose",.12);
+
+SQL statement :- SELECT * FROM salespeople
+---------------------------------------------------------------------------------
+Q.19)TABLE:- SAMPLETABLE -ORDER
+   
+     CREATE TABLE sample_order
+ (
+     order_no int PRIMARY KEY AUTO_INCREMENT,
+     purch_amt float,
+     ord_date date,
+     customer_id int,
+     
+     salesmanid_fk int,
+     FOREIGN KEY salespeople(salesmanid_fk) REFERENCES salespeople(salesmanid)
+     )
+
+SQL statement :-  SELECT  order_no,ord_date,purch_amt FROM sample_order WHERE salesmanid_fk=5001
+
+-------------------------------------------------------------------------------------------------------------------------
+Q.20)TABLE :- ITEM_MAST
+   
+        CREATE TABLE item_mast
+ (
+     pro_id int PRIMARY KEY AUTO_INCREMENT,
+     pro_name varchar(30),
+     pro_price float,
+     pro_com int 
+   )
+
+--->insertion of value in table:-
+  INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(101,"mother board",3200.00,15);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(102,"key board",450.00,16);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(103,"zip drive",250.00,14);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(104,"speaker",550.00,16);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(105,"moniter",5000.00,11);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(106,"DVD drive",900.00,12);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(107,"CD drive",800.00,12);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(108,"printer",2600.00,13);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(109,"refill cartridge",350.00,13);
+ INSERT INTO item_mast(pro_id,pro_name,pro_price,pro_com)
+ VALUES(110,"mouse",250.00,12);
+ 
+----SQL query:-  SELECT * FROM item_mast WHERE pro_price BETWEEN 200 AND 600
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

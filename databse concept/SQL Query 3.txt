@@ -1,0 +1,58 @@
+SQL Query 3:
+TABLE 1:- Salesperson
+
+  CREATE TABLE salesperson
+(
+    SNO  int PRIMARY KEY AUTO_INCREMENT ,
+    SNAME varchar(30),
+    CITY varchar(30),
+    COMM int 
+  )
+  
+--->insertion of value in table:--
+  INSERT INTO salesperson(SNO,SNAME,CITY,COMM) 
+ VALUES(1001,"peel","london",.12);
+  INSERT INTO salesperson(SNO,SNAME,CITY,COMM) 
+ VALUES(1002,"serres","san jose",.13);
+  INSERT INTO salesperson(SNO,SNAME,CITY,COMM) 
+ VALUES(1003,"motika","london",.11);
+  INSERT INTO salesperson(SNO,SNAME,CITY,COMM) 
+ VALUES(1004,"rafkin","barcelona",.15);
+  INSERT INTO salesperson(SNO,SNAME,CITY,COMM) 
+ VALUES(1007,"axeirod","New york",.1);
+-----------------------------------------------------------------------------------------------------
+ 
+TABLE 2: CUSTOMER
+   CREATE TABLE customer
+ (
+     CNN int,
+     CNAME varchar(30),
+     CITY varchar(30),
+     RATING int,
+   
+     SNO_fk int,
+     FOREIGN KEY salesperson(SNO_fk) REFERENCES salesperson(SNO)
+     )
+insertion of value in table :-
+   INSERT INTO customer(CNN,CNAME,CITY,RATING,SNO_fk)
+ VALUES(201,"hoffman","london",100,1001);
+ INSERT INTO customer(CNN,CNAME,CITY,RATING,SNO_fk)
+ VALUES(202,"giovanne","roe",200,1003);
+ INSERT INTO customer(CNN,CNAME,CITY,RATING,SNO_fk)
+ VALUES(203,"liu","san jose",300,1002);
+ INSERT INTO customer(CNN,CNAME,CITY,RATING,SNO_fk)
+ VALUES(204,"grass","barcelona",100,1002);
+ INSERT INTO customer(CNN,CNAME,CITY,RATING,SNO_fk)
+ VALUES(206,"clemens","london",300,1007);
+ INSERT INTO customer(CNN,CNAME,CITY,RATING,SNO_fk)
+ VALUES(207,"pereria","roe",100,1004);
+
+------------------------------------------------------------------------------------
+-->(13)   Select *  from salesperson where SNO > 1000; 
+-->(14)  Select SNAME, CITY from salesperson WHERE COMM < 0.12 and CITY = "london";
+-->(15) Select SNAME,CITY FROM salesperson WHERE CITY IN("barcelona","london"); 
+-->(16)  SELECT SNAME,COMM FROM salesperson WHERE COMM > 0.10 AND COMM<0.12
+-->(17)   SELECT CNAME FROM customer WHERE RATING<=100 AND CITY="roe"
+
+
+ 

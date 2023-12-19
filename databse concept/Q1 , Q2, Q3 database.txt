@@ -1,0 +1,23 @@
+Q.1)What you understand by database?
+Ans. A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, are referred to as a database system, often shortened to just database.
+A database is used to store large amount of data.
+
+
+Q.2)what is normalization?
+Ans. Normalization is the process of organizing data in a database. It includes creating tables and establishing relationships between those tables according to rules designed both to protect the data and to make the database more flexible by eliminating redundancy and inconsistent dependency.
+
+Q.3)What is difference between DBMS and RDBMS?
+Ans. DBMS
+     -->DBMS stands for database management system
+        Database+management system
+     -->Database is a collection of inter-related data and management system is a set of program to store and retrive those data.
+     -->DBMS is a collection of inter-related data and set of program to store & access those data in an easy and effective manner.
+    
+    RDBMS
+    -->stands for "Relational database management system".
+    -->An RDBMS is a type of DBMS designed specially for relation databses.
+    -->A relation database refers to a database that store data in a structured format,using row and columns.
+    -->This make it easy to locate and access specific values within the database .
+    -->It is "relational" because the values within each table are related to each other.
+    -->The RDBMS refers to the that executes queries on the data , including adding,upadating ,and software searching for values .
+    -->An RDBMS may also provide a visual representation of the data . 
